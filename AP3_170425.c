@@ -48,15 +48,6 @@ void print(PLista k) {
   }
 }
 
-PLista concat(PLista lista1, PLista lista2) {
-  // Percorrer lista2 e inserir elementos em lista1
-  while (lista2 != NULL) {
-    lista1 = insere(lista1, lista2->dado);
-    lista2 = lista2->prox;
-  }
-  return lista1;
-}
-
 
 PLista merge(PLista p, PLista q) {
   if (p == NULL) return q;
@@ -82,8 +73,6 @@ PLista merge(PLista p, PLista q) {
 }
 
 
-
-
 PLista merge_sort(PLista p, int t, int r, int *contador) {
   (*contador)++;
   if (t < r) {
@@ -107,12 +96,11 @@ int main() {
     lista = insere(lista, num);
   }
   int k = 0;
-  //print(lista);
   PLista ordena;
   ordena = merge_sort(lista, 0, n , &k);
-// ordena = divide(lista, n/2);
+
   print(ordena);
   k = 
-printf("\n%i", (int)log2(k));
+  printf("\n%i", (int)log2(k));
   return 0;
 }
